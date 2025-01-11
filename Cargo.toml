@@ -1,0 +1,27 @@
+[package]
+name = "tree-sitter-wat"
+description = "WebAssembly grammars for tree-sitter"
+version = "0.0.0"
+authors = ["silvanshade <silvanshade@users.noreply.github.com>"]
+license = "Apache-2.0 WITH LLVM-exception"
+readme = "README.md"
+keywords = ["incremental", "parsing", "tree-sitter", "wasm"]
+categories = ["parsing", "text-editors"]
+repository = "https://github.com/wasm-lsp/tree-sitter-wasm.git"
+edition = "2021"
+autoexamples = false
+
+build = "bindings/rust/build.rs"
+include = ["bindings/rust/*", "grammar.js", "queries/*", "wat/src/*"]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter-language = "0.1"
+
+[build-dependencies]
+cc = "1.1.22"
+
+[dev-dependencies]
+tree-sitter = "0.24.3"
